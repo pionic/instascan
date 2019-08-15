@@ -31,8 +31,8 @@ class Camera {
       }
     };
 	
-     var userAgent = window.navigator.userAgent;
-     if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i)) {
+	 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+     if (iOS) {
          constraints.video.facingMode = "environment";
      }	
 

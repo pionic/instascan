@@ -142,7 +142,8 @@ class Analyzer {
       ZXing.HEAPU8[this.imageBuffer + j] = Math.trunc((r + g + b) / 3);
     }
 
-    let err = ZXing._decode_qr(this.decodeCallback);
+    let err = ZXing._decode_any(this.decodeCallback);
+    // let err = ZXing._decode_qr(this.decodeCallback);
     if (err) {
       return null;
     }
